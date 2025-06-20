@@ -24,11 +24,6 @@ from utils import *
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
 
-logger.debug("Debug message for testing")
-logger.info("Info message for testing")
-logger.warning("Warning message for testing")
-logger.error("Error message for testing")
-
 TIMEZONE = "Asia/Kolkata"
 BATCH_FILES = {}
 
@@ -253,8 +248,7 @@ async def start(client, message):
         except Exception as e:
             await log_error(client, f"Got Error In Verification Funtion.\n\n Error - {e}")
             print(f"Error In Verification - {e}")
-            await message.reply_text(f"Something Want Wrong ! Message Here - @SilentXBotz_Support")
-            
+            pass
     
     if data.startswith("allfiles"):
         files = temp.GETALL.get(file_id)
@@ -1023,6 +1017,6 @@ async def reset_all_settings(client, message):
             quote=True
         )
     except Exception as e:
-        print(f"Error processing reset all settings command: {str(e)}")
+        print(f"Error Processing Reset All Settings Command: {str(e)}")
         await message.reply("<b>ᴇʀʀᴏʀ 🚫.oᴄᴄᴜʀʀᴇᴅ ᴡʜɪʟᴇ ᴅᴇʟᴇᴛɪɴɢ ɢʀᴏᴜᴘ ꜱᴇᴛᴛɪɴɢꜱ! ᴘʟᴇᴀꜱᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ.</b>", quote=True)
         
