@@ -250,6 +250,14 @@ def extract_tag(file_name: str) -> str:
         return f"{quality_match.group(1)} •"
     return ""
 
+def extract_request_content(message_text):
+    match = re.search(r"<u>(.*?)</u>", message_text)
+    if match:
+        return match.group(1).strip()
+    match = re.search(r"📝 ʀᴇǫᴜᴇꜱᴛ ?: ?(.*?)(?:\n|$)", message_text)
+    if match:
+        return match.group(1).strip()
+    return message_text.strip()
  
 def clean_filename(file_name):
     file_name = re.sub(r'http\S+', '', re.sub(r'@\w+|#\w+', '', file_name))
