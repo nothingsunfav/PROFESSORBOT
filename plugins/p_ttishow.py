@@ -12,6 +12,7 @@ import psutil
 import time
 from time import time
 from bot import botStartTime
+import logging
 
 """-----------------------------------------https://t.me/SilentXBotz--------------------------------------"""
 
@@ -48,6 +49,10 @@ async def save_group(bot, message):
         await message.reply_text(
             text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️\n\nIf you have any questions & doubts about using me contact support.</b>",
             reply_markup=reply_markup)
+        try:
+            await db.connect_group(message.chat.id, message.from_user)
+        except Exception as e:
+            logging.error(f"DB error connecting group: {e}")
     else:
         settings = await get_settings(message.chat.id)
         if settings["welcome"]:
