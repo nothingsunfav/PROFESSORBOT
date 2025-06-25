@@ -12,7 +12,7 @@ class Database:
         self.col = self.db.users
         self.grp = self.db.groups
         self.users = self.db.uersz
-        self.req = self.db.requests
+        self.req = self.db.requests[str(AUTH_REQ_CHANNEL)]
         self.botcol = self.db.bot_settings
         self.misc = self.db.misc
         self.verify_id = self.db.verify_id 
