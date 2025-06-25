@@ -904,7 +904,7 @@ async def remove_fsub(client, message):
     if not await is_check_admin(client, grp_id, message.from_user.id):
         return await message.reply_text('<b>ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ</b>')
     settings = await get_settings(grp_id)
-    if settings["fsub_id"] == AUTH_CHANNEL:
+    if (c in AUTH_CHANNEL for c in settings['fsub_id']):
         await message.reply_text("<b>ᴄᴜʀʀᴇɴᴛʟʏ ɴᴏ ᴀɴʏ ғᴏʀᴄᴇ ꜱᴜʙ ᴄʜᴀɴɴᴇʟ.... <code>[ᴅᴇғᴀᴜʟᴛ ᴀᴄᴛɪᴠᴀᴛᴇ]</code></b>")
     else:
         await save_group_settings(grp_id, 'fsub_id', AUTH_CHANNEL)
