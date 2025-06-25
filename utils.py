@@ -54,17 +54,18 @@ class temp(object):
     VERIFICATIONS = {}
 
 async def is_req_subscribed(bot, query):
-    if await db.find_join_req(query.from_user.id):
-        return True
-    try:
-        user = await bot.get_chat_member(AUTH_CHANNEL, query.from_user.id)
-    except UserNotParticipant:
-        pass
-    except Exception as e:
-        print(e)
-    else:
-        if user.status != enums.ChatMemberStatus.BANNED:
-            return True
+    for ch in AUTH_CHANNEL:
+        if ch == AUTH_REQ_CHANNEL:
+            if await db.find_join_req(query.from_user.id):
+                return True
+            try:
+                user = await bot.get_chat_member(ch, query.from_user.id)
+                if user.status != enums.ChatMemberStatus.BANNED:
+                    return True
+            except UserNotParticipant:
+                continue
+            except Exception as e:
+                print(e)
     return False
 
 async def is_subscribed(bot, user_id, channel_id):
