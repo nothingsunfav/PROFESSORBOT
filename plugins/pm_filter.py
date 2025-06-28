@@ -42,7 +42,10 @@ SPELL_CHECK = {}
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
     if EMOJI_MODE:
-        await message.react(emoji=random.choice(REACTIONS))
+        try:
+            await message.react(emoji=random.choice(REACTIONS))
+        except Exception:
+            pass
     await silentdb.update_top_messages(message.from_user.id, message.text)
     if message.chat.id != SUPPORT_CHAT_ID:
         settings = await get_settings(message.chat.id)
@@ -69,7 +72,10 @@ async def pm_text(bot, message):
     user = message.from_user.first_name
     user_id = message.from_user.id
     if EMOJI_MODE:
-        await message.react(emoji=random.choice(REACTIONS), big=True)
+        try:
+            await message.react(emoji=random.choice(REACTIONS))
+        except Exception:
+            pass
     if content.startswith(("/", "#")):
         return  
     try:
