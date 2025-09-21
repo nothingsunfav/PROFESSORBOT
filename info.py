@@ -30,8 +30,8 @@ SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://files.catbox.moe/ukiw5m.jpg
 FSUB_IMG = (environ.get('FSUB_IMG', 'https://i.ibb.co/cShkPjcZ/x.jpg')).split() 
 
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '8210377618').split()] 
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002947030944').split()]
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1003041305681'))  
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1003041305681').split()]
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002947030944'))  
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1003081386721'))  
 MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002915524449'))  
 PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1003081386721')) 
