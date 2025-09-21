@@ -50,10 +50,10 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'clustor05')
 MULTIPLE_DB = is_enabled(os.environ.get('MULTIPLE_DB', "False"), False) # Type True For Turn On MULTIPLE DB FUNTION 
 DATABASE_URI2 = environ.get('DATABASE_URI2', "")
 
-GRP_LNK = environ.get('GRP_LNK', '')
-CHNL_LNK = environ.get('CHNL_LNK', '')
-OWNER_LNK = environ.get('OWNER_LNK', '')
-UPDATE_CHANNEL_LNK = environ.get('UPDATE_CHANNEL_LNK', '')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+myiFNJ011_dlZDI1')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/yagamimoviez')
+OWNER_LNK = environ.get('OWNER_LNK', 't.me/Leoyagamihere')
+UPDATE_CHANNEL_LNK = environ.get('UPDATE_CHANNEL_LNK', 'https://t.me/yagamimoviez')
 
 AUTH_CHANNEL = environ.get("AUTH_CHANNEL", "-") # add multiple channels here, separated by single space
 AUTH_CHANNEL = [int(ch) for ch in AUTH_CHANNEL.strip().split()] if AUTH_CHANNEL else []
