@@ -15,8 +15,8 @@ def is_enabled(value, default):
 
 
 SESSION = environ.get('SESSION', 'media_search')
-API_ID = int(environ.get('API_ID', '24160099'))
-API_HASH = environ.get('API_HASH', '381515f2540b0bf817a68af8b352f5b7')
+API_ID = int(environ.get('API_ID', '25451030'))
+API_HASH = environ.get('API_HASH', '9810f1e7387fc060f76b706844364819')
 BOT_TOKEN = environ.get('BOT_TOKEN', "7418561054:AAEhpxt2WrOkV1dV9U9psjALelc1d0R3rPA")
 
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -29,7 +29,7 @@ SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/13702ae26fb05df5266
 SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://files.catbox.moe/ukiw5m.jpg'))
 FSUB_IMG = (environ.get('FSUB_IMG', 'https://i.ibb.co/cShkPjcZ/x.jpg')).split() 
 
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '6248675084').split()] 
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '8210377618').split()] 
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002947030944').split()]
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1003041305681'))  
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', ''))  
